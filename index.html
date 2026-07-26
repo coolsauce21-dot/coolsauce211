@@ -7,7 +7,7 @@
     content="width=device-width, initial-scale=1.0"
   />
 
-  <title>야키소바 주문</title>
+  <title>시험 강의 결제</title>
 
   <script src="https://js.tosspayments.com/v2/standard"></script>
 
@@ -343,9 +343,9 @@
 <body>
   <main class="page">
     <header class="header">
-      <h1>야키소바 주문</h1>
+      <h1>시험 강의 결제</h1>
       <p>
-        수량을 선택한 후 토스페이먼츠 결제창에서 결제를 진행하세요.
+        상품을 확인한 후 토스페이먼츠 결제창에서 결제를 진행하세요.
       </p>
     </header>
 
@@ -372,30 +372,30 @@
 
     <div id="orderArea">
       <section class="card">
-        <div class="food-image" aria-label="야키소바">
-          🍜
+        <div class="food-image" aria-label="시험 강의">
+          🎓
         </div>
 
         <div class="content">
-          <span class="badge">인기 메뉴</span>
+          <span class="badge">온라인 강의</span>
 
-          <h2 class="product-title">야키소바</h2>
+          <h2 class="product-title">시험 강의</h2>
 
           <p class="description">
-            쫄깃한 면과 채소를 고소한 소스에 볶아 만든 일본식 볶음면입니다.
+            시험 대비에 필요한 핵심 개념과 실전 전략을 체계적으로 학습하는 온라인 강의입니다.
           </p>
 
           <div class="row">
             <div>
               <div class="row-label">가격</div>
-              <div class="unit-price">1개 기준</div>
+              <div class="unit-price">강의 1개 기준</div>
             </div>
 
-            <strong>1,000원</strong>
+            <strong>269,000원</strong>
           </div>
 
           <div class="row">
-            <label for="quantity" class="row-label">수량</label>
+            <label for="quantity" class="row-label">신청 수량</label>
 
             <select id="quantity">
               <option value="1">1개</option>
@@ -408,7 +408,7 @@
 
           <div class="row total-row">
             <span class="total-label">총 결제금액</span>
-            <strong id="totalPrice" class="total-price">1,000원</strong>
+            <strong id="totalPrice" class="total-price">269,000원</strong>
           </div>
         </div>
       </section>
@@ -440,7 +440,7 @@
       </section>
 
       <button id="payButton" class="pay-button" type="button">
-        1,000원 결제하기
+        269,000원 결제하기
       </button>
 
       <p class="notice">
@@ -459,8 +459,8 @@
     const CLIENT_KEY = "test_ck_0RnYX2w532EK6nvPpl118NeyqApQ";
 
     const PRODUCT = {
-      name: "야키소바",
-      unitPrice: 1000
+      name: "시험 강의",
+      unitPrice: 269000
     };
 
     const quantitySelect = document.getElementById("quantity");
@@ -510,7 +510,7 @@
        * 토스 orderId는 영문, 숫자, -, _를 사용하고
        * 6자 이상 64자 이하로 생성합니다.
        */
-      return createRandomId("YAKISOBA");
+      return createRandomId("COURSE");
     }
 
     function createCustomerKey() {
@@ -732,7 +732,7 @@
           success: true,
           title: "결제가 완료되었습니다.",
           message:
-            "야키소바 주문이 정상적으로 승인되었습니다.",
+            "시험 강의 결제가 정상적으로 승인되었습니다.",
           detail: `
             <strong>주문번호</strong>: ${escapeHtml(orderId)}<br />
             <strong>결제금액</strong>: ${formatWon(amount)}<br />
